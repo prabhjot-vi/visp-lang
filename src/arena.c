@@ -1,7 +1,7 @@
-#include "arena.h"
-
 #include <stdio.h>
 #include <string.h>
+
+#include "arena.h"
 
 void arena_new(struct Arena *arena, size_t size) {
   if (arena == NULL) {

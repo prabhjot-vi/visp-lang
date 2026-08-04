@@ -1,7 +1,8 @@
-#include "arena.h"
-
 #include <stdio.h>
 #include <string.h>
+
+#include "arena.h"
+#include "str.h"
 
 enum TOKEN {
   TOKEN_NUMBER,
@@ -18,18 +19,17 @@ enum TOKEN {
 };
 
 int main() {
+  struct Arena arena;
+  arena_new(&arena, sizeof(size_t) * 100);
 
-  /* char *expr = "(+ 2 3)"; */
+  struct String *expr = string_new(&arena, "(+ 2 3)");
 
-  struct Arena a;
-  arena_new(&a, sizeof(char) * 10);
+  for (size_t index = 0; index < expr->length; ++index) {
+    char ch = string_at(expr, index);
 
-  char *h = arena_allocate(&a, sizeof(char) * 2);
-  memcpy(h, "Hi", sizeof(char) * 2);
-
-  printf("%s\n", h);
-
-  arena_free(&a);
+    printf("%c\n", ch);
+  }
   
+  arena_free(&arena);
   return 0;
 }
