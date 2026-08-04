@@ -1,2 +1,3 @@
 # About
-Visp is an Lips-like/S-expresion language.
+
+Visp is an Lips-like/S-expresion language
