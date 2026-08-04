@@ -28,6 +28,8 @@ int main() {
   memcpy(h, "Hi", sizeof(char) * 2);
 
   printf("%s\n", h);
+
+  arena_free(&a);
   
   return 0;
 }

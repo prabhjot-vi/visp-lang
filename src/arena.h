@@ -14,4 +14,5 @@ void arena_new(struct Arena *arena, size_t size);
 void *arena_allocate(struct Arena *arena, size_t request_size);
 
 void arena_reset(struct Arena *arena);
+void arena_free(struct Arena *arena);
 #endif

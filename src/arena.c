@@ -37,3 +37,10 @@ void arena_reset(struct Arena *arena) {
 
   arena->offset = 0;
 }
+
+void arena_free(struct Arena *arena) {
+  if (arena == NULL || arena->buffer == NULL) {
+    return;
+  }
+  free(arena->buffer);
+}
